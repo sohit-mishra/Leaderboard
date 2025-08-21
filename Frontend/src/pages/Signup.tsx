@@ -28,7 +28,11 @@ const Signup: React.FC = () => {
     const BACKEND_URL: string = import.meta.env.VITE_BACKEND_URL;
 
     try {
-     const res = await axios.post(`${BACKEND_URL}/api/auth/register`, { name, email, password });
+      const res = await axios.post(`${BACKEND_URL}/api/auth/register`, {
+        name,
+        email,
+        password,
+      });
 
       if (res.status === 200) {
         toast.success("Signup successful!");
@@ -57,7 +61,9 @@ const Signup: React.FC = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <Label htmlFor="name"  className="mb-2">Name</Label>
+              <Label htmlFor="name" className="mb-2">
+                Name
+              </Label>
               <Input
                 id="name"
                 type="text"
@@ -69,7 +75,9 @@ const Signup: React.FC = () => {
             </div>
 
             <div>
-              <Label htmlFor="email"  className="mb-2">Email</Label>
+              <Label htmlFor="email" className="mb-2">
+                Email
+              </Label>
               <Input
                 id="email"
                 type="email"
@@ -81,7 +89,9 @@ const Signup: React.FC = () => {
             </div>
 
             <div>
-              <Label htmlFor="password" className="mb-2">Password</Label>
+              <Label htmlFor="password" className="mb-2">
+                Password
+              </Label>
               <Input
                 id="password"
                 type="password"
@@ -91,6 +101,8 @@ const Signup: React.FC = () => {
                 required
               />
             </div>
+
+            {error && <p className="text-red-500 text-sm"></p>}
 
             <Button type="submit" className="w-full mt-2">
               Sign Up

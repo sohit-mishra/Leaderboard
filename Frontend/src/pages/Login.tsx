@@ -116,6 +116,8 @@ const Login: React.FC = () => {
               </Link>
             </div>
 
+            {error && <p className="text-red-500 text-sm"></p>}
+
             <Button type="submit" className="w-full mt-2">
               Login
             </Button>

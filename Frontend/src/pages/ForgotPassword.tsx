@@ -71,6 +71,8 @@ const ForgotPassword: React.FC = () => {
               />
             </div>
 
+            {error && <p className="text-red-500 text-sm"></p>}
+
             <Button type="submit" className="w-full mt-2">
               Send Reset Link
             </Button>
